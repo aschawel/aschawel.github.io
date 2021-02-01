@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GRID - WINE</title>
+<link href="gridsitestyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<header name="wineHeader" id="siteHeader">
+	<table>
+		<tr class="headerBar">
+			<td width="150" align="center"><img src="GRID WINE LOGO.jpg" width="100" height="100" alt=""/></td>
+			<td align="left"><h2 id="heading">Bev Management Tools</h2></td>
+			<td name="navSpacer" width="100"></td>
+			<td><p><a class="navLinkThis" href="Grid Wine Calc.html">WINE</a></p></td>
+			<td width="15" align="center"><p class="navLink">|</p></td>
+			<td><p><a class="navLink" href="Cocktail Calc.html">COCKTAIL COST</a></p></td>
+			<td width="15" align="center"><p class="navLink">|</p></td>
+			<td><p><a class="navLink" href="ABV.html">ABV</a></p></td>
+			<td width="15" align="center"><p class="navLink">|</p></td>
+			<td><p><a class="navLink" href="contact.html">CONTACT</a></p></td>
+		</tr>
+	</table>
+</header>
+	
+<body>
+<div name="bottlePriceCalc" id="bottlePriceCalc">
+	<form id="btl_price_calc" name="btl_price_calc" method="post">
+	<table width="25%" border="5" align="center">
+  <tbody>
+	<tr>
+		<td colspan="2"  bgcolor="a3a3a3" align="center"><h3>Bottle Price Calculator</h3></td>
+	</tr>
+    <tr>
+      <td align="center" bgcolor="#FEFFCF"><label for="textfield">Bottle Cost:</label></td>
+      <td align="center" bgcolor="#FEFFCF"><input type="text" name="btl_cost" id="btl_cost" width="200" value="20" oninput="validateBtlForm()" required> <br></td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FEFFCF">
+		  <label for="textfield">Method:</label>
+		  <select id="btlSelMethod" oninput="btlCostAction()">
+			  <option id="btlSelPC" value="1">Product Cost %</option>
+			  <option id="btlSelMarkup" value="2">Markup</option>
+		  </select>
+	</td>
+     	<div class="range">
+      		<td align="center" bgcolor="#FEFFCF">
+				<input name="btl_pc" type="range" id="btl_pc" width="90%" value=".333" min=".25" max=".5" step=".001" oninput="btlCostAction()">
+				<input name="btl_pc_text" type="text" id="btl_pc_text" value="33.3%" width="40" disabled><br>
+			</td>
+		</div>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#5BB24B"><label for="textfield">Bottle Price:</label></td>
+      <td align="center" bgcolor="#5BB24B"><input class="mainOutput" type="text" name="price" id="price" value="$ 60" disabled></td>
+    </tr>
+		</tbody>
+	</table>
+	</form>
+</div>
+<br>
+<br>
+<div name="glassPriceCalc" id="glassPriceCalc">
+	<form id="gls_calc" name="gls_calc" method="post">
+	<table width="50%" border="5" align="center">
+  <tbody>
+	<tr>
+		<td colspan="2" bgcolor="a3a3a3" align="center"><h3>Glass Price Calculator</h3></td>
+	</tr>
+    <tr>
+      <td align="center" bgcolor="#FEFFCF"><label for="textfield">Portion Size (oz):</label></td>
+      <td align="center" bgcolor="#FEFFCF"><input type="text" name="gls_portion" id="gls_portion" width="200" value="6" oninput="validateGlsForm()" required> <br></td>
+    </tr>
+	   <tr>
+      <td align="center" bgcolor="#FEFFCF"><label for="textfield">Bottle Size (ml):</label></td>
+      <td align="center" bgcolor="#FEFFCF">
+		  <select name="gls_btl_size" id="gls_btl_size" oninput="validateGlsForm()">
+			  <option value="187">187mL (Split)</option>
+			  <option value="375">375mL (Half Bottle)</option>
+			  <option value="500">500mL (Half Liter)</option>
+			  <option value="500">620mL (Clavelin)</option>
+			  <option value="750" selected>750mL (Standard)</option>
+			  <option value="1000">1L (Liter)</option>
+			  <option value="1500">1.5L (Magnum)</option>
+			  <option value="1750">1750mL (Handle)</option>
+			  <option value="3000">3L (Jeroboam/ Double Magnum)</option>
+			  <option value="4500">4.5L (Rehoboam)</option>
+			  <option value="6000">6L (Imperial)</option>
+			  <option value="9000">9L (Mordechai)</option>
+			  <option value="12000">12L (Balthazar)</option>
+			  <option value="15000">15L (Nebuchadnezzar)</option>
+			  <option value="18000">18L (Melchior)</option>
+			  <option value="20000">20L (Solomon)</option>
+			  <option value="25000">25L (Sovereign)</option>
+			  <option value="30000">30L (Melchizedek)</option>
+		  </select>
+		  
+		  <br></td>
+    </tr>
+	  <tr>
+      <td align="center" bgcolor="#FEFFCF"><label for="textfield">Bottle Cost:</label></td>
+      <td align="center" bgcolor="#FEFFCF"><input type="text" name="gls_btl_cost" id="gls_btl_cost" width="200" value="20" oninput="validateGlsForm()" required> <br></td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FEFFCF">
+		  <label for="textfield">Method:</label><br>
+		  <select id="glsSelMethod" oninput="glsCostAction()">
+			  <option id="glsSelPC" value="1">Product Cost %</option>
+			  <option id="glsSelMarkup" value="2">Markup</option>
+		  </select>
+		</td>
+      <td align="center" bgcolor="#FEFFCF"><input type="range" name="gls_pc" id="gls_pc" value=".25" min=".15" max=".50" step=".001" onMouseMove="glsCostAction()" >
+		  <input name="pc_text" id="gls_pc_text" type="text" width="40" value="25.0%" disabled><br></td>
+    </tr>
+	<tr>
+      <td align="center" bgcolor="#B9E6B2"><label for="textfield">Portions/ Bottle:</label></td>
+      <td align="center" bgcolor="#B9E6B2"><input type="text" name="gls_ppb" id="gls_ppb" width="200" value="4.23" disabled> <br></td>
+    </tr>
+	<tr>
+      <td align="center" bgcolor="#B9E6B2"><label for="textfield">Cost/ Portion:</label></td>
+      <td align="center" bgcolor="#B9E6B2"><input type="text" name="gls_cpp" id="gls_cpp" width="200" value="$ 4.73" disabled> <br></td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#5BB24B"><label for="textfield">Glass Price:</label></td>
+      <td align="center" bgcolor="#5BB24B"><input class="mainOutput" type="text" name="gls_price" id="gls_price" value="$ 19" disabled></td>
+    </tr>
+	<tr>
+      <td align="center" bgcolor="#B9E6B2"><label for="textfield">Total Revenue:</label></td>
+      <td align="center" bgcolor="#B9E6B2"><input type="text" name="gls_rev" id="gls_rev" value="$ 80" disabled></td>
+    </tr>
+	<tr>
+      <td align="center" bgcolor="#B9E6B2"><label for="textfield">Total Profit:</label></td>
+      <td align="center" bgcolor="#B9E6B2"><input type="text" name="gls_profit" id="gls_profit" value="$ 60" disabled></td>
+    </tr>
+		</tbody>
+	</table>
+	</form>
+
+<script src="jscriptWineCalc.js"></script>
+	
+</div>
+<br>
+</body>
+<footer>
+	<br><form method="post" action="mailto:aschawe@gridwineconsulting.com">
+	<table border="0" align="center" width="60%">
+		<tr>
+			<td align="center"><label for="textfield">Feedback and Features Request:</label></td>
+			<td align="left"><input name="featureRequest" type="text" size="50"></td>
+			<td><input type="submit"></td>
+		</tr>
+		<tr><td colspan="3" align="center">&copy; 2021 Grid Wine Consulting, LLC</td></tr>
+	</table>
+	</form>
+	<br>
+</footer>
+</html>

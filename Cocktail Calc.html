@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GRID - ABV Calc</title>
+<link href="gridsitestyle.css" rel="stylesheet" type="text/css">
+</head>
+	
+<header name="wineHeader" id="siteHeader">
+	<table>
+		<tr class="headerBar">
+			<td width="150" align="center"><img src="GRID WINE LOGO.jpg" width="100" height="100" alt=""/></td>
+			<td align="left"><h2 id="heading">Bev Management Tools</h2></td>
+			<td name="navSpacer" width="100"></td>
+			<td><p><a class="navLink" href="Grid Wine Calc.html">WINE</a></p></td>
+			<td width="15" align="center"><p class="navLink">|</p></td>
+			<td><p><a class="navLinkThis" href="Cocktail Calc.html">COCKTAIL COST</a></p></td>
+			<td width="15" align="center"><p class="navLink">|</p></td>
+			<td><p><a class="navLink" href="ABV.html">ABV</a></p></td>
+			<td width="15" align="center"><p class="navLink">|</p></td>
+			<td><p><a class="navLink" href="contact.html">CONTACT</a></p></td>
+		</tr>
+	</table>
+</header>
+
+<body>
+	<form method="post">
+	<table id="tblCalcFloater" border="1" align="center" width="25%">
+		<tr>
+			<td width="30%"><label for="textfield">Cocktail Name</label></td>
+			<td align="center"><input name="cocktailName" type="text"></td>
+		</tr>
+		<tr>
+			<td>Volume per Portion</td>
+			<td align="center"><input name="volPerPortion" id="volPerPortion" type="text" disabled></td>
+		</tr>
+		<tr>
+			<td>Number of Portions</td>
+			<td align="center"><input name="numPortions" id="numPortions" type="text" value="1" oninput="validateVolume()"></td>
+		</tr>
+		<tr>
+			<td>Total Volume</td>
+			<td align="center"><input name="scaledVol" id="scaledVol" type="text" disabled></td>
+		</tr>
+	</table>
+		
+		<br>
+		
+	<table border="1" id="tblCocktailCalc" align="center">
+		<tr name="tableHeader" id="calcHeader">
+			<td>Ingredient</td>
+			<td>ABV%</td>
+			<td>Volume (oz)</td>
+			<td>Ratio</td>
+			<td>Scaled Amount (oz)</td>
+		</tr>
+		<tr name="ingredient 0" align="center">
+			<td><input name="ing1" id="ing0" type="text"></td>
+			<td><input name="abv" id="abv0" type="number" oninput="validateVolume()"></td>
+			<td><input name="vol" id="vol0" type="number" oninput="validateVolume()"></td>
+			<td><input name="ratio" id="ratio0" type="number" disabled></td>
+			<td><input name="scaled" id="scaled0" type="number" disabled></td>
+		</tr>
+		<tr name="ingredient 1">
+			<td><input name="ing" id="ing1" type="text"></td>
+			<td><input name="abv" id="abv1" type="number" oninput="validateVolume()"></td>
+			<td><input name="vol" id="vol1" type="number" oninput="validateVolume()"></td>
+			<td><input name="ratio" id="ratio1" type="number" disabled></td>
+			<td><input name="scaled" id="scaled1" type="number" disabled></td>
+		</tr>
+		<tr name="ingredient 2">
+			<td><input name="ing" id="ing2" type="text"></td>
+			<td><input name="abv" id="abv2"  type="number" oninput="validateVolume()"></td>
+			<td><input name="vol" id="vol2"  type="number" oninput="validateVolume()"></td>
+			<td><input name="ratio" id="ratio2"  type="number" disabled></td>
+			<td><input name="scaled" id="scaled2"  type="number" disabled></td>
+		</tr>
+		<tr name="ingredient 3">
+			<td><input name="ing" id="ing3" type="text"></td>
+			<td><input name="abv" id="abv3"  type="number" oninput="validateVolume()"></td>
+			<td><input name="vol" id="vol3"  type="number" oninput="validateVolume()"></td>
+			<td><input name="ratio" id="ratio3"  type="number" disabled></td>
+			<td><input name="scaled" id="scaled3"  type="number" disabled></td>
+		</tr>
+		<tr name="ingredient 4">
+			<td><input name="ing" id="ing4" type="text"></td>
+			<td><input name="abv" id="abv4"  type="number" oninput="validateVolume()"></td>
+			<td><input name="vol" id="vol4"  type="number" oninput="validateVolume()"></td>
+			<td><input name="ratio" id="ratio4"  type="number" disabled></td>
+			<td><input name="scaled" id="scaled4"  type="number" disabled></td>
+		</tr>
+		<tr name="ingredient 5">
+			<td><input name="ing" id="ing5" type="text" value=""></td>
+			<td><input name="abv" id="abv5"  type="number" oninput="validateVolume()"></td>
+			<td><input name="vol" id="vol5"  type="number" oninput="validateVolume()"></td>
+			<td><input name="ratio" id="ratio5"  type="number" disabled></td>
+			<td><input name="scaled" id="scaled5"  type="number" disabled></td>
+		</tr>
+		<tr name="ingredient 6">
+			<td><input name="ing" id="ing6" type="text" value=""></td>
+			<td><input name="abv" id="abv6"  type="number" oninput="validateVolume()"></td>
+			<td><input name="vol" id="vol6"  type="number" oninput="validateVolume()"></td>
+			<td><input name="ratio" id="ratio6"  type="number" disabled></td>
+			<td><input name="scaled" id="scaled6"  type="number" disabled></td>
+		</tr>
+		<tr name="ingredient totals">
+			<td>Totals:</td>
+			<td><input name="ttl_ABV" id="ttl_ABV" type="number" disabled></td>
+			<td><input name="ttl_vol" id="ttl_vol"  type="number" value="0" disabled></td>
+			<td><input name="ttl_ratio" id="ttl_ratio"  type="number" value="-" disabled></td>
+			<td><input name="ttl_scaled" id="ttl_scaled" type="number" value="0" disabled></td>
+		</tr>
+	</table>
+	</form>
+	
+<script src="jscriptCocktailCalc.js"></script>
+	
+</body>
+	<br>
+	<br>
+<footer>
+	<form method="post" action="mailto:aschawe@gridwineconsulting.com">
+	<table border="0" align="center" width="60%">
+		<tr>
+			<td align="center"><label for="textfield">Feedback and Features Request:</label></td>
+			<td align="left"><input name="featureRequest" type="text" size="50"></td>
+			<td><input type="submit"></td>
+		</tr>
+		<tr><td colspan="3" align="center">&copy; 2021 Grid Wine Consulting, LLC</td></tr>
+	</table>
+	</form>
+	<br>
+</footer>
+</html>

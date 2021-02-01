@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+.headerBar{
+	column-span: all;
+	vertical-align: middle;
+}
+
+#heading {
+	color: #000088;
+	font-weight: bold;
+	font-family: arial;
+	text-align: center;
+}
+
+#gls_pc {
+	width: 90%;
+}
+#btl_pc{
+	width: 90%;
+}
+
+h2 {
+	color: #000088;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: arial;
+	text-align: center;
+	vertical-align: middle;
+}
+
+h3 {
+	color: #000088;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: arial;
+	text-align: center;
+	vertical-align: middle;
+}
+
+label {
+	font-weight: bold;
+	font-family: Helvetica, Arial, "sans-serif";
+}
+input {
+	font-family: arial;
+	font-weight: bold;
+}
+
+.selMethod{
+	font-weight: bold;
+}
+
+.btlPC{
+	direction: rtl;
+}
+
+#standard {
+	font-weight: bold;
+}
+#pc {
+	width: 90%
+}
+.mainOutput {
+	font-weight: bolder;
+	font-size: 24px;
+	color: black;
+	text-align: center;
+}
+
+#tblCalcFloater {
+	border: 5;
+	font-family: arial;
+	font-weight: bold;
+}
+
+#tblCocktailCalc{
+	border: 5;
+	border-width: thick;
+	font-family: arial;
+}
+
+#calcHeader {
+	font-family: arial;
+	font-weight: bold;
+}
+
+#gridNavBar{
+	background-color: #000088;
+}
+
+.navLink:link{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: normal; color: black; text-align: center; width: auto; text-decoration: none;}
+.navLink:visited{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: normal; color: black; text-align: center; width: auto; text-decoration: none;}
+.navLink:hover{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: normal; color: black; text-align: center; width: auto; text-decoration: underline;}
+.navLink:active{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: normal; color: black; text-align: center; width: 150; text-decoration: none;}
+
+.navLinkThis:link{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: bold; color: black; text-align: center; width: auto; text-decoration: none;}
+.navLinkThis:visited{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: normal; color: black; text-align: center; width: auto; text-decoration: none;}
+.navLinkThis:hover{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: bolder; color: black; text-align: center; width: auto; text-decoration: none;}
+.navLinkThis:active{font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: normal; color: black; text-align: center; width: 150; text-decoration: none;}
