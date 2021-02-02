@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+.ingredient{
+	width: 60%;
+}
+.abv-header{
+	width: 10%;
+}
+.vol-header{
+	width: 10%;	
+}
+.ratio-header{
+	width: 10%;	
+}
+.scaled-header{
+	width: 10%;	
+}
+
 .headerBar{
 	column-span: all;
 	vertical-align: middle;
