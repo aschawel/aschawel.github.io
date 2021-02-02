@@ -22,13 +22,18 @@
 <body>
 
 	<div class="content-containter">
-		<div class="content-bar">Cost</div>
-		<div class="content-bar">
-			<select class="dropdown" id="btlSelMethod">
-			  <option id="btlSelPC" value="1">PC %</option>
-			  <option id="btlSelMarkup" value="2">Markup</option>
-		  	</select></div>
-		<div class="content-bar">Price</div>
+		<form method="post">
+			<div class="content-bar"><table class="content-bar"><tr><td>Cost</td><td><input class="input-text" type="text" value="20"></td></tr></table></div>
+			<div class="content-bar">
+				<table class="content-bar"><tr><td>
+					<select class="dropdown" id="btlSelMethod">
+					  <option id="btlSelPC" value="1">PC %</option>
+					  <option id="btlSelMarkup" value="2">Markup</option>
+					</select></td><td><input class="input-text" type="text" value="20"></td></tr>
+				</table>
+				</div>
+			<div class="content-bar"><table class="content-bar"><tr><td>Price</td><td><input class="input-text" type="text" value="20"></td></tr></table></div>
+		</form>
 	</div>
 	
 </body>
@@ -39,6 +44,12 @@
 		justify-content: center;
 		align-items: center;
 		position: relative;
+	}
+	.input-text{
+		background: transparent;
+		border-color: black;
+		border: thin;
+		right: 0px;
 	}
 	.nav-dropdown{
 		background: transparent;
