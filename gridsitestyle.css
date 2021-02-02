@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+.cocktail-calc-content{
+	font-size: 14px;
+	align-content: center;
+}
+
 .ingredient{
 	width: 60%;
 }
