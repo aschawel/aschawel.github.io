@@ -5,14 +5,20 @@
 <title>reformatted</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-		<header name="wineHeader" id="siteHeader">
+
+<div class="header-bar">
 	<table>
-		<tr class="headerBar">
-			<td width="150" align="center"><a href="https://aschawel.github.io/index.html"><img src="GRID WINE LOGO.jpg" width="100" height="100" alt=""/></a></td>
-			<td align="left"><h2 id="heading">Bev Management Tools</h2></td>
+		<tr>
+			<td align="center"><a href="https://aschawel.github.io/index.html"><img src="GRID WINE LOGO.jpg" width="100" height="100" alt=""/></a></td>
+			<td align="center"><h2 id="heading">Bev Management Tools</h2></td>
+			<td><select class="nav_dropdown">
+			  <option id="home" value="1">Home</option>
+			  <option id="wine" value="2">Wine</option>
+			  <option id="wine" value="2">Cocktail</option>
+		  	</select></td>
 		</tr>
 	</table>
-</header>
+</div>
 <body>
 
 	<div class="content-containter">
@@ -29,18 +35,26 @@
 <style>
 	body{
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		position: relative;
 	}
+	.header-bar{
+		font-family: helvetica, arial;
+		text-align: center;
+		flex-grow: 3;
+	}
+	
 	.dropdown{
-		font-size: 5vh;
-		width: 35vw;
+		font-size: 4vh;
+		width: 30vw;
 		color: white;
 		text-indent: 0px;
 		background: transparent;
 		overflow: visible;
 	}
+	
 	.content-containter{
 		width: 100%;
 	}
@@ -49,12 +63,12 @@
 		height: 10vh;
 		background: #9F3D3F;
 		border-radius: 0px 50px 0px 50px;
-		font-size: 5vh;
+		font-size: 4vh;
 		margin: 5px;
 		text-indent: 25px;
 		font-family: helvetica, arial;
 		color: white;
-		background-image: linear-gradient(to right,#000088,white);
+		background-image: linear-gradient(to right,#000088 10%,white);
 		vertical-align: bottom;
 	}
 	</style>
