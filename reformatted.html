@@ -23,7 +23,7 @@
 
 	<div class="content-containter">
 		<form method="post">
-			<div class="content-bar"><table class="content-bar-table"><tr><td>Cost</td><td><input class="input-text" type="text" value="20"></td></tr></table></div>
+			<div class="content-bar"><table class="content-bar-table"><tr><td>Cost</td><td><input class="input-text" type="number" value="20"></td></tr></table></div>
 			<div class="content-bar">
 				<table class="content-bar-table"><tr><td>
 					<select class="dropdown" id="btlSelMethod">
@@ -32,7 +32,7 @@
 					</select></td><td><input class="input-slider" type="range" value=".333" min=".25" max=".5" step=".001"></td></tr>
 				</table>
 				</div>
-			<div class="content-bar"><table class="content-bar-table"><tr><td>Price</td><td><input class="input-text" type="text" value="20"></td></tr></table></div>
+			<div class="content-bar"><table class="content-bar-table"><tr><td>Price</td><td><input class="input-text" type="number" value="20"></td></tr></table></div>
 		</form>
 	</div>
 	
@@ -52,6 +52,13 @@
 		width: 35vw;
 		text-align: center;
 		border-radius: 5px;
+	}
+	.input-slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 10px;
+		height: 10px;
+		background: black;
 	}
 	.input-text{
 		background-color: rgba(0,0,0,.1);
