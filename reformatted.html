@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>reformatted</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="">
 </head>
 
 <div class="header-bar">
@@ -132,4 +132,12 @@
 .navLink:hover{font-family: Helvetica, Arial; font-weight: normal; color: black; text-align: center; width: auto; text-decoration: underline;}
 .navLink:active{font-family: Helvetica, Arial; font-weight: normal; color: black; text-align: center; width: 150; text-decoration: none;}
 	</style>
+	<script>
+	setTimeout(function () {
+        let viewheight = $(window).height();
+        let viewwidth = $(window).width();
+        let viewport = document.querySelector("meta[name=viewport]");
+        viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0, user-scalable=no");
+    }, 300);
+	</script>
 </html>
