@@ -28,17 +28,30 @@
 <body>
 
 	<div class="content-containter">
-		<form method="post">
-			<div class="content-bar"><table class="content-bar-table"><tr><td>Cost</td><td><input class="input-text" type="number" value="20"></td></tr></table></div>
+		<form id="btl_price_calc" name="btl_price_calc" method="post">
 			<div class="content-bar">
-				<table class="content-bar-table"><tr><td>
-					<select class="dropdown" id="btlSelMethod">
-					  <option id="btlSelPC" value="1">PC %</option>
-					  <option id="btlSelMarkup" value="2">Markup</option>
-					</select></td><td><input class="input-slider" type="range" value=".333" min=".25" max=".5" step=".001"></td></tr>
+				<table class="content-bar-table"><tr><td>Cost</td><td>
+				<input class="input-text" type="number" name="btl_cost" id="btl_cost" value="20" oninput="validateBtlForm()" required></td></tr></table>
+			</div>
+			<div class="content-bar">
+				<table class="content-bar-table">
+					<tr>
+						<td>	<select class="dropdown" id="btlSelMethod" oninput="btlCostAction()">
+					  				<option id="btlSelPC" value="1">PC %</option>
+					  				<option id="btlSelMarkup" value="2">Markup</option>
+								</select>
+						</td>
+						<td>
+								<input name="btl_pc" id="btl_pc"  class="input-slider" type="range" value=".333" min=".25" max=".5" step=".001" oninput="btlCostAction()">
+								<input name="btl_pc_text" type="text" id="btl_pc_text" value="33.3%" disabled>
+						</td>
+					</tr>
 				</table>
-				</div>
-			<div class="content-bar"><table class="content-bar-table"><tr><td>Price</td><td><input class="input-text" type="number" value="20"></td></tr></table></div>
+			</div>
+			<div class="content-bar">
+				<table class="content-bar-table"><tr><td>Price</td><td>
+				<input class="input-text" type="text" name="price" id="price" value="$ 60" disabled></td></tr></table>
+			</div>
 		</form>
 	</div>
 	
@@ -52,6 +65,14 @@
 		position: relative;
 		margin: 0;
 		padding: 0;
+	}
+	#btl_pc_text{
+		text-align: center;
+		border: none;
+		background: transparent;
+		color: black;
+		font-family: helvetica, arial;
+		font: bold;
 	}
 	.logo{
 		width: 25vw;
@@ -116,9 +137,8 @@
 		overflow: hidden;
 	}
 	.content-bar{
-		width: 100%;
+		width: 95%;
 		height: 10vh;
-		background: #9F3D3F;
 		border-radius: 5px 50px 5px 50px;
 		font-size: 4vh;
 		margin: 5px;
@@ -127,6 +147,7 @@
 		color: white;
 		background-image: linear-gradient(to right,#000088 10%,white);
 		vertical-align: bottom;
+		box-shadow: 2px 2px 2px grey;
 	}
 	.content-bar-table{
 		width: 90%;
@@ -135,7 +156,6 @@
 		margin: 5px;
 		text-indent: 25px;
 		font-family: helvetica, arial;
-		color: white;
 		text-align: end;
 	}
 .navLink:link{font-family: Helvetica, Arial; font-weight: normal; color: black; text-align: center; width: auto; text-decoration: none;}
@@ -143,13 +163,5 @@
 .navLink:hover{font-family: Helvetica, Arial; font-weight: normal; color: black; text-align: center; width: auto; text-decoration: underline;}
 .navLink:active{font-family: Helvetica, Arial; font-weight: normal; color: black; text-align: center; width: 150; text-decoration: none;}
 	</style>
-	<script>
-	setTimeout(function () {
-        let viewheight = $(window).height();
-        let viewwidth = $(window).width();
-        let viewport = document.querySelector("meta[name=viewport]");
-        viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0, user-scalable=no");
-    });
-		screen.orientation.lock();
-	</script>
+	<script src="jscriptWineCalc.js"></script>
 </html>
