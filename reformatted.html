@@ -43,7 +43,7 @@
 						</td>
 						<td>
 								<input name="btl_pc" id="btl_pc"  class="input-slider" type="range" value=".333" min=".25" max=".5" step=".001" oninput="btlCostAction()">
-								<input name="btl_pc_text" type="text" id="btl_pc_text" value="33.3%" disabled>
+								<input class="slider-value-text" name="btl_pc_text" type="text" id="btl_pc_text" value="33.3%" disabled>
 						</td>
 					</tr>
 				</table>
@@ -66,69 +66,7 @@
 		margin: 0;
 		padding: 0;
 	}
-	
-input[type=range] {-webkit-appearance: none; width: 100%; background: transparent;}
-input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;}
-input[type=range]:focus {outline: none;}
-input[type=range]::-ms-track {width: 100%; cursor: pointer; background: transparent; border-color: transparent; color: transparent;}
-	
-input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;border: 1vw solid #000000;height: 5vw;width: 5vw;border-radius: 50%;background: #ffffff;cursor: pointer;margin-top: -10px;}
-input[type=range]::-moz-range-thumb {border: 1vw solid #000000;height: 3vw;width: 3vw;border-radius: 50%;background: #ffffff;cursor: pointer;}
-input[type=range]::-ms-thumb {border: 1vw solid #000000;height: 5vw;width: 5vw;border-radius: 50%;background: #ffffff;cursor: pointer;}
-	
-	
-input[type=range]::-webkit-slider-runnable-track {
-  width: 50%;
-  height: 1vw;
-  cursor: pointer;
-  background: #black;
-  border-radius: 1.3px;
-  border: 2px solid black;
-}
 
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: black;
-}
-
-input[type=range]::-moz-range-track {
-  width: 50%;
-  height: 8.4px;
-  cursor: pointer;
-  background: #3071a9;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-
-input[type=range]::-ms-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  border-width: 16px 0;
-  color: transparent;
-}
-input[type=range]::-ms-fill-lower {
-  background: #2a6495;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-input[type=range]:focus::-ms-fill-lower {
-  background: #3071a9;
-}
-input[type=range]::-ms-fill-upper {
-  background: #3071a9;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-input[type=range]:focus::-ms-fill-upper {
-  background: #367ebd;
-}
-	
-	
-	
 	#btl_pc_text{
 		text-align: center;
 		border: none;
@@ -136,6 +74,8 @@ input[type=range]:focus::-ms-fill-upper {
 		color: black;
 		font-family: helvetica, arial;
 		font: bold;
+		font-size: 4vw;
+		vertical-align: middle;
 	}
 	.logo{
 		width: 25vw;
